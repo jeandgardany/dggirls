@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entrega de Costuras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Qtd Total</th>
+      <th>Qtd entregue</th>
+      <th>Restante</th>
+      <th>Valor pago</th>
+      <th>Restante</th>
+      <th>Finalizado</th>
+      <th>Perdas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entregas.each do |entrega| %>
+      <tr>
+        <td><%= entrega.data %></td>
+        <td><%= entrega.costura.corte.qtd_total %></td>
+        <td><%= entrega.qtd_entrega %></td>
+        <td><%= entrega.restante = entrega.costura.corte.qtd_total - entrega.qtd_entrega %></td>
+        <td><%= entrega.valor_pago %></td>
+        <td><%= entrega.restante %></td>
+        <td><%= entrega.finalizado %></td>
+        <td><%= entrega.perdas %></td>
+        <td><%= link_to 'Show', entrega %></td>
+        <td><%= link_to 'Edit', edit_entrega_path(entrega) %></td>
+        <td><%= link_to 'Destroy', entrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrega', new_entrega_path %>

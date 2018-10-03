@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  fornecedor: one
+  produto: MyString
+  valor: 9.99
+  pagamento: MyString
+
+two:
+  data: 2018-10-03
+  fornecedor: two
+  produto: MyString
+  valor: 9.99
+  pagamento: MyString

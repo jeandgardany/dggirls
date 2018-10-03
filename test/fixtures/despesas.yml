@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  nome: MyString
+  valor: 9.99
+  obs: MyText
+
+two:
+  data: 2018-10-03
+  nome: MyString
+  valor: 9.99
+  obs: MyText

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @pag_parcela.data %>
+</p>
+
+<p>
+  <strong>Pago:</strong>
+  <%= @pag_parcela.pago %>
+</p>
+
+<%= link_to 'Edit', edit_pag_parcela_path(@pag_parcela) %> |
+<%= link_to 'Back', pag_parcelas_path %>

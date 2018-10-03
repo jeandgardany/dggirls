@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  estampa: one
+  valor: 9.99
+  costura: one
+  obs: MyText
+  perdas: 1
+
+two:
+  data: 2018-10-03
+  estampa: two
+  valor: 9.99
+  costura: two
+  obs: MyText
+  perdas: 1

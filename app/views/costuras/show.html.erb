@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data envio:</strong>
+  <%= @costura.data %>
+</p>
+
+<p>
+  <strong>Faccao:</strong>
+  <%= @costura.faccao %>
+</p>
+
+<p>
+  <strong>Data do Corte:</strong>
+  <%= @costura.corte.data %>
+</p>
+
+<p>
+  <strong>Qtd total de Peças:</strong>
+  <%= @costura.qtd_total %>
+</p>
+
+<%= link_to 'Editar', edit_costura_path(@costura) %> |
+<%= link_to 'Voltar', costuras_path %>

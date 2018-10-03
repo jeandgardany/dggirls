@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @entrega.data %>
+</p>
+
+<p>
+  <strong>Qtd Total de Peças:</strong>
+  <%= @entrega.costura.corte.qtd_total %>
+</p>
+
+<p>
+  <strong>Qtd entrega:</strong>
+  <%= @entrega.qtd_entrega %>
+</p>
+
+<p>
+  <strong>Qtd Restante:</strong>
+  <%= @entrega.restante = @entrega.costura.corte.qtd_total - @entrega.qtd_entrega %>
+</p>
+
+<p>
+  <strong>Data Recebimento do Pacote:</strong>
+  <%= @entrega.costura.data %>
+</p>
+
+<p>
+  <strong>Data do Corte:</strong>
+  <%= @entrega.costura.corte.data %>
+</p>
+
+<p>
+  <strong>Valor pago:</strong>
+  <%= @entrega.valor_pago %>
+</p>
+
+<p>
+  <strong>Finalizado:</strong>
+  <%= @entrega.finalizado %>
+</p>
+
+<p>
+  <strong>Perdas:</strong>
+  <%= @entrega.perdas %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @entrega.obs %>
+</p>
+
+<%= link_to 'Edit', edit_entrega_path(@entrega) %> |
+<%= link_to 'Back', entregas_path %>

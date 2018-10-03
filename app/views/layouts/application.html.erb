@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dggirls</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <div align="center"><h2>DG Confecções</h2></div>
+  </head>
+
+  <body>
+  <p class="navbar-text pull-right">
+  <%= link_to "Caixas", caixas_path, :class => 'navbar-link'  %> |
+  <%= link_to "Vendas", vendas_path, :class => 'navbar-link'  %> |
+  <%= link_to "Débitos", debitos_path, :class => 'navbar-link'  %> |
+  <%= link_to "Despesas", despesas_path, :class => 'navbar-link'  %> |
+  <%= link_to "Fornecedores", fornecedors_path, :class => 'navbar-link'  %> |
+  <%= link_to "Modelos", modelos_path, :class => 'navbar-link'  %> |
+  <%= link_to 'Compras', compras_path, :class => 'navbar-link' %> |
+  <%= link_to "Cortes", cortes_path, :class => 'navbar-link'  %> |
+  <%= link_to "Costuras", costuras_path, :class => 'navbar-link'  %> |
+  <%= link_to "Entrega Costuras", entregas_path, :class => 'navbar-link'  %> |
+  <%= link_to "Estampas", estampas_path, :class => 'navbar-link'  %> |
+  <%= link_to "Entrega Estampas", entrega_estampas_path, :class => 'navbar-link'  %>
+  
+</p>
+    <%= yield %>
+  </body>
+</html>

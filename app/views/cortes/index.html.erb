@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cortes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Compra</th>
+      <th>Qtd total</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cortes.each do |corte| %>
+      <tr>
+        <td><%= corte.data %></td>
+        <td><%= corte.compra.data %></td>
+        <td><%= corte.compra.produto %></td>
+        <td><%= corte.qtd_total %></td>
+        <td><%= corte.valor %></td>
+        <td><%= link_to 'Show', corte %></td>
+        <td><%= link_to 'Edit', edit_corte_path(corte) %></td>
+        <td><%= link_to 'Destroy', corte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corte', new_corte_path %>

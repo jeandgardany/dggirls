@@ -1,0 +1,58 @@
+<%= form_with(model: corte, local: true) do |form| %>
+  <% if corte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(corte.errors.count, "error") %> prohibited this corte from being saved:</h2>
+
+      <ul>
+      <% corte.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compra_id %>
+    <%= form.collection_select :compra_id, Compra.all.order(created_at: :asc), :id, :data, prompt: 'Selecione' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd_total %>
+    <%= form.number_field :qtd_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor, 'Valor Pago' %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="form-group">
+    <h5 class="control-label col-lg-2">Modelos</h5>
+    <div id="corte_modelos">
+      <%= form.fields_for :corte_modelos do |modelo| %>
+        <!-- COMENTÁRIO:
+          é uma exigencia também que os campos do seu nested esteja numa partial "nome_do_seu_nested_no_singular_fields"
+          no nosso caso _experience_fields.html.erb
+        -->
+        <%= render 'corte_modelo_fields', f: modelo %>
+      <% end %>
+   
+      <!-- COMENTÁRIO:
+        O link para adicionar dinamicamente os fields deve estar dentro de uma div .links
+      -->
+      <div class="links">
+        <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
+        <%= link_to_add_association 'add modelo', form, :corte_modelos, :class => 'control-label col-lg-12' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

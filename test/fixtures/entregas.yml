@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  qtd_entrega: 1
+  costura: one
+  valor_pago: 9.99
+  restante: 1
+  finalizado: false
+  perdas: 9.99
+  obs: MyText
+
+two:
+  data: 2018-10-03
+  qtd_entrega: 1
+  costura: two
+  valor_pago: 9.99
+  restante: 1
+  finalizado: false
+  perdas: 9.99
+  obs: MyText

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qtd: 1
+  modelo: one
+  corte: one
+
+two:
+  qtd: 1
+  modelo: two
+  corte: two

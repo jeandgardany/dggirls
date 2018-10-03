@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Debitos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Compra</th>
+      <th>Qtd parcelas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @debitos.each do |debito| %>
+      <tr>
+        <td><%= debito.compra %></td>
+        <td><%= debito.qtd_parcelas %></td>
+        <td><%= link_to 'Show', debito %></td>
+        <td><%= link_to 'Edit', edit_debito_path(debito) %></td>
+        <td><%= link_to 'Destroy', debito, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Debito', new_debito_path %>

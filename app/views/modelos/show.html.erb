@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @modelo.codigo %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @modelo.nome %>
+</p>
+
+<%= link_to 'Edit', edit_modelo_path(@modelo) %> |
+<%= link_to 'Back', modelos_path %>

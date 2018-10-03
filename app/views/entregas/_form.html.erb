@@ -1,0 +1,57 @@
+<%= form_with(model: entrega, local: true) do |form| %>
+  <% if entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrega.errors.count, "error") %> prohibited this entrega from being saved:</h2>
+
+      <ul>
+      <% entrega.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd_entrega, 'Qtd Total Entregue' %>
+    <%= form.number_field :qtd_entrega %>
+  </div>
+
+  <div class="field">
+    <%= form.label :costura_id, "Data Entrega do Pacote" %>
+    <%= form.collection_select :costura_id, Costura.order(created_at: :desc), :id, :data, prompt: 'Selecione' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_pago %>
+    <%= form.text_field :valor_pago %>
+  </div>
+
+  <div class="field">
+    <%= form.label :restante %>
+    <%= form.number_field :restante %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalizado %>
+    <%= form.check_box :finalizado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perdas %>
+    <%= form.text_field :perdas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :obs %>
+    <%= form.text_area :obs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

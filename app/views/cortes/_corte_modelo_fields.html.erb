@@ -1,0 +1,26 @@
+<!-- COMENTÁRIO:
+  Dentro da partial todo conteúdo deve estar dentro de uma div .nested-fields
+-->
+<div class="nested-fields">
+  <div class="field">
+    <div class="col-lg-12">
+      <%= f.collection_select :modelo_id, @modelos, :id, :nome, prompt: 'Selecione' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :qtd, "Qtd" %>
+      <%= f.number_field :qtd %>
+    </div>
+
+    <div class="field">
+      <%= f.label :valor_custo, "Valor de Custo" %>
+      <%= f.number_field :valor_custo, value: (@corte.compra.valor / @corte.qtd_total ) %>
+    </div>
+  </div>
+  <!-- COMENTÁRIO:
+    link_to_remove_association é o helper que o cocoon nos fornece para deletar algum nested
+  -->
+  <%= link_to_remove_association "remove modelo", f, :class => 'control-label col-lg-2' %>
+ 
+  <br><br><br>
+</div>

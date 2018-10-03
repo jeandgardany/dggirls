@@ -1,0 +1,2 @@
+class PagParcela < ApplicationRecord
+end

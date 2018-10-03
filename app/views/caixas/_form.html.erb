@@ -1,0 +1,82 @@
+<%= form_with(model: caixa, local: true) do |form| %>
+  <% if caixa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(caixa.errors.count, "error") %> prohibited this caixa from being saved:</h2>
+
+      <ul>
+      <% caixa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compra_id %>
+    <%= form.text_field :compra_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :despesa_id %>
+    <%= form.text_field :despesa_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :venda_id %>
+    <%= form.text_field :venda_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :costura_id %>
+    <%= form.text_field :costura_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :corte_id %>
+    <%= form.text_field :corte_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estampa_id %>
+    <%= form.text_field :estampa_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_entradas %>
+    <%= form.text_field :total_entradas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_saidas %>
+    <%= form.text_field :total_saidas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saldo %>
+    <%= form.text_field :saldo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extras %>
+    <%= form.text_field :extras %>
+  </div>
+
+  <div class="field">
+    <%= form.label :obs %>
+    <%= form.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_perdas %>
+    <%= form.text_field :total_perdas %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pag Parcelas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Pago</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pag_parcelas.each do |pag_parcela| %>
+      <tr>
+        <td><%= pag_parcela.data %></td>
+        <td><%= pag_parcela.pago %></td>
+        <td><%= link_to 'Show', pag_parcela %></td>
+        <td><%= link_to 'Edit', edit_pag_parcela_path(pag_parcela) %></td>
+        <td><%= link_to 'Destroy', pag_parcela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pag Parcela', new_pag_parcela_path %>

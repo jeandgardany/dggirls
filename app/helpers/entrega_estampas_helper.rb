@@ -1,0 +1,2 @@
+module EntregaEstampasHelper
+end

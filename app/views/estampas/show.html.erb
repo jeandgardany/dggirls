@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @estampa.data %>
+</p>
+
+<p>
+  <strong>Data Corte:</strong>
+  <%= @estampa.corte.data %>
+</p>
+
+<p>
+  <strong>Qtd total das Peças:</strong>
+  <%= @estampa.qtd_total %>
+</p>
+
+<p>
+  <strong>Valor total:</strong>
+  <%= @estampa.valor_total %>
+</p>
+
+<p>
+  <strong>Estampa tipo:</strong>
+  <%= @estampa.estampa_tipo %>
+</p>
+
+<p>
+  <strong>Finalizado:</strong>
+  <%= @estampa.finalizado %>
+</p>
+
+<%= link_to 'Editar', edit_estampa_path(@estampa) %> |
+<%= link_to 'Voltar', estampas_path %>

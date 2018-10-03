@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  valor_venda: 9.99
+  dinheiro: 9.99
+  cartao: 9.99
+  nota: 9.99
+
+two:
+  data: 2018-10-03
+  valor_venda: 9.99
+  dinheiro: 9.99
+  cartao: 9.99
+  nota: 9.99

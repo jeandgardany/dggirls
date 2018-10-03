@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Corte Modelos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qtd</th>
+      <th>Modelo</th>
+      <th>Corte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corte_modelos.each do |corte_modelo| %>
+      <tr>
+        <td><%= corte_modelo.qtd %></td>
+        <td><%= corte_modelo.modelo %></td>
+        <td><%= corte_modelo.corte %></td>
+        <td><%= link_to 'Show', corte_modelo %></td>
+        <td><%= link_to 'Edit', edit_corte_modelo_path(corte_modelo) %></td>
+        <td><%= link_to 'Destroy', corte_modelo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corte Modelo', new_corte_modelo_path %>

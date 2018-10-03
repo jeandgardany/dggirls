@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  compra: one
+  despesa: one
+  venda: one
+  costura: one
+  corte: one
+  total_entradas: 9.99
+  total_saidas: 9.99
+  saldo: 9.99
+  extras: 9.99
+  obs: MyText
+  total_perdas: 9.99
+  estampa: one
+
+two:
+  data: 2018-10-03
+  compra: two
+  despesa: two
+  venda: two
+  costura: two
+  corte: two
+  total_entradas: 9.99
+  total_saidas: 9.99
+  saldo: 9.99
+  extras: 9.99
+  obs: MyText
+  total_perdas: 9.99
+  estampa: two

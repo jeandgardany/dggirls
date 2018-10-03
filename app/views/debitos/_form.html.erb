@@ -1,0 +1,27 @@
+<%= form_with(model: debito, local: true) do |form| %>
+  <% if debito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(debito.errors.count, "error") %> prohibited this debito from being saved:</h2>
+
+      <ul>
+      <% debito.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :compra_id %>
+    <%= form.text_field :compra_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd_parcelas %>
+    <%= form.number_field :qtd_parcelas %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

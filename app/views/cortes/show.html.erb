@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @corte.data %>
+</p>
+
+<p>
+  <strong>Data Compra:</strong>
+  <%= @corte.compra.data %>
+</p>
+
+<p>
+  <strong>Produtos Compra:</strong>
+  <%= @corte.compra.produto %>
+</p>
+
+<p>
+  <strong>Qtd total:</strong>
+  <%= @corte.qtd_total %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= valor_formatado(@corte.valor) %>
+</p>
+
+<strong>Modelos:</strong><br>
+	<% @corte.corte_modelos.each do |corte| %>
+	  <p>
+		<%= "Nome: #{corte.modelo.nome}" %>
+		<%= "Qtd: #{corte.qtd}" %>
+		<%= "Custo: #{valor_formatado(corte.valor_custo)}" %>
+	  </p>
+	<% end %>
+
+<%= link_to 'Editar', edit_corte_path(@corte) %> |
+<%= link_to 'Voltar', cortes_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2018-10-03
+  corte: one
+  qtd_total: 1
+  valor_total: 9.99
+  estampa_tipo: MyString
+  finalizado: false
+
+two:
+  data: 2018-10-03
+  corte: two
+  qtd_total: 1
+  valor_total: 9.99
+  estampa_tipo: MyString
+  finalizado: false

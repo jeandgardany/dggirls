@@ -1,0 +1,52 @@
+<%= form_with(model: entrega_estampa, local: true) do |form| %>
+  <% if entrega_estampa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entrega_estampa.errors.count, "error") %> prohibited this entrega_estampa from being saved:</h2>
+
+      <ul>
+      <% entrega_estampa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estampa_id, 'Data Entrega do Pacote' %>
+    <%= form.collection_select :estampa_id, Estampa.order(created_at: :desc), :id, :data, prompt: 'Selecione' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd_entregue %>
+    <%= form.number_field :qtd_entregue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :costura_id %>
+    <%= form.collection_select :costura_id, Costura.order(faccao: :desc), :id, :faccao, prompt: 'selecione' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :obs %>
+    <%= form.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perdas %>
+    <%= form.number_field :perdas %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

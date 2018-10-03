@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Costuras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Faccao</th>
+      <th>Corte</th>
+      <th>Qtd total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @costuras.each do |costura| %>
+      <tr>
+        <td><%= costura.data %></td>
+        <td><%= costura.faccao %></td>
+        <td><%= costura.corte.data %></td>
+        <td><%= costura.qtd_total %></td>
+        <td><%= link_to 'Mostrar', costura %></td>
+        <td><%= link_to 'Editar', edit_costura_path(costura) %></td>
+        <td><%= link_to 'Deletar', costura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Costura', new_costura_path %>

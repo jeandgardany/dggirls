@@ -1,0 +1,47 @@
+<%= form_with(model: estampa, local: true) do |form| %>
+  <% if estampa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estampa.errors.count, "error") %> prohibited this estampa from being saved:</h2>
+
+      <ul>
+      <% estampa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :corte_id, 'Data do Corte' %>
+    <%= form.collection_select :corte_id, Corte.order(created_at: :desc), :id, :data, prompt: 'Selecione' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd_total %>
+    <%= form.number_field :qtd_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_total %>
+    <%= form.text_field :valor_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estampa_tipo %>
+    <%= form.text_field :estampa_tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalizado %>
+    <%= form.check_box :finalizado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

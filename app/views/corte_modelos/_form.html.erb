@@ -1,0 +1,37 @@
+<%= form_with(model: corte_modelo, local: true) do |form| %>
+  <% if corte_modelo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(corte_modelo.errors.count, "error") %> prohibited this corte_modelo from being saved:</h2>
+
+      <ul>
+      <% corte_modelo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :qtd %>
+    <%= form.number_field :qtd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modelo_id %>
+    <%= form.text_field :modelo_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :corte_id %>
+    <%= form.text_field :corte_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor_custo %>
+    <%= form.text_field :valor_custo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
