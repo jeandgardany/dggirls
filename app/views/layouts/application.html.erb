@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DG Girl</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "DG Girl" %></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <div align="center"><h2>DG Confecções</h2></div>
+     <p align="center" padding-right="300">
+    <% if user_signed_in? %>
+      Logado como: <strong><%= current_user.email %></strong>.
+      <%= link_to 'Editar', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Cadastrar", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Logar", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+    </p>
   </head>
-
+<div class="container">
+    <p class="navbar-text pull-left">
+    | <%= link_to "Caixas", caixas_path, :class => 'navbar-link'  %> |
+      <%= link_to "Vendas", vendas_path, :class => 'navbar-link'  %> |
+      <%= link_to "Débitos", debitos_path, :class => 'navbar-link'  %> |
+      <%= link_to "Despesas", despesas_path, :class => 'navbar-link'  %> |
+      <%= link_to "Fornecedores", fornecedors_path, :class => 'navbar-link'  %> |
+      <%= link_to "Modelos", modelos_path, :class => 'navbar-link'  %> |
+      <%= link_to 'Compras', compras_path, :class => 'navbar-link' %> |
+      <%= link_to "Cortes", cortes_path, :class => 'navbar-link'  %> |
+      <%= link_to "Costuras", costuras_path, :class => 'navbar-link'  %> |
+      <%= link_to "Entrega Costuras", entregas_path, :class => 'navbar-link'  %> |
+      <%= link_to "Estampas", estampas_path, :class => 'navbar-link'  %> |
+      <%= link_to "Entrega Estampas", entrega_estampas_path, :class => 'navbar-link' %> |
+   </p>
+</div>
   <body>
-  <p class="navbar-text pull-right">
-  <%= link_to "Caixas", caixas_path, :class => 'navbar-link'  %> |
-  <%= link_to "Vendas", vendas_path, :class => 'navbar-link'  %> |
-  <%= link_to "Débitos", debitos_path, :class => 'navbar-link'  %> |
-  <%= link_to "Despesas", despesas_path, :class => 'navbar-link'  %> |
-  <%= link_to "Fornecedores", fornecedors_path, :class => 'navbar-link'  %> |
-  <%= link_to "Modelos", modelos_path, :class => 'navbar-link'  %> |
-  <%= link_to 'Compras', compras_path, :class => 'navbar-link' %> |
-  <%= link_to "Cortes", cortes_path, :class => 'navbar-link'  %> |
-  <%= link_to "Costuras", costuras_path, :class => 'navbar-link'  %> |
-  <%= link_to "Entrega Costuras", entregas_path, :class => 'navbar-link'  %> |
-  <%= link_to "Estampas", estampas_path, :class => 'navbar-link'  %> |
-  <%= link_to "Entrega Estampas", entrega_estampas_path, :class => 'navbar-link'  %>
-</p>
-<p class="navbar-text pull-left">
-<% if user_signed_in? %>
-  Logado como: <strong><%= current_user.email %></strong>.
-  <%= link_to 'Editar', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Cadastrar", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Logar", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+  
+
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+  <div class="container"> <br><br>
+    <p>&copy; Jean Lima 2018 </p>
+  </div>
+</footer>
   </body>
 </html>
