@@ -7,10 +7,9 @@
     <tr>
       <th>Data</th>
       <th>Estampa</th>
+      <th>Qtd Rec</th>
       <th>Valor</th>
       <th>Costura</th>
-      <th>Obs</th>
-      <th>Perdas</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +17,14 @@
   <tbody>
     <% @entrega_estampas.each do |entrega_estampa| %>
       <tr>
-        <td><%= entrega_estampa.data %></td>
-        <td><%= entrega_estampa.estampa %></td>
-        <td><%= entrega_estampa.valor %></td>
-        <td><%= entrega_estampa.costura %></td>
-        <td><%= entrega_estampa.obs %></td>
-        <td><%= entrega_estampa.perdas %></td>
-        <td><%= link_to 'Show', entrega_estampa %></td>
-        <td><%= link_to 'Edit', edit_entrega_estampa_path(entrega_estampa) %></td>
-        <td><%= link_to 'Destroy', entrega_estampa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= entrega_estampa.data.strftime("%d/%m/%Y") %></td>
+        <td><%= entrega_estampa.estampa.data.strftime("%d/%m/%Y") %></td>
+        <td><%= entrega_estampa.qtd_entregue %></td>
+        <td><%= valor_formatado(entrega_estampa.valor) %></td>
+        <td><%= entrega_estampa.costura.faccao %></td>
+        <td><%= link_to 'Mostrar', entrega_estampa, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_entrega_estampa_path(entrega_estampa), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', entrega_estampa, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Entrega Estampa', new_entrega_estampa_path %>
+<%= link_to 'Nova Entrega de Estampa', new_entrega_estampa_path, :class => 'btn btn-outline-primary btn-sm' %>

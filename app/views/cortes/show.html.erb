@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<h2>Cortes</h2>
 <p>
   <strong>Data:</strong>
-  <%= @corte.data %>
+  <%= @corte.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
   <strong>Data Compra:</strong>
-  <%= @corte.compra.data %>
+  <%= @corte.compra.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -34,5 +34,5 @@
 	  </p>
 	<% end %>
 
-<%= link_to 'Editar', edit_corte_path(@corte) %> |
-<%= link_to 'Voltar', cortes_path %>
+<%= link_to 'Editar', edit_corte_path(@corte), :class => 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Voltar', cortes_path, :class => 'btn btn-outline-primary btn-sm' %>

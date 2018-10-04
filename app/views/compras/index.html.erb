@@ -20,11 +20,11 @@
         <td><%= compra.data %></td>
         <td><%= compra.fornecedor.nome %></td>
         <td><%= compra.produto %></td>
-        <td><%= compra.valor %></td>
+        <td><%= valor_formatado(compra.valor) %></td>
         <td><%= compra.pagamento %></td>
-        <td><%= link_to 'Show', compra %></td>
-        <td><%= link_to 'Edit', edit_compra_path(compra) %></td>
-        <td><%= link_to 'Destroy', compra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', compra, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_compra_path(compra), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', compra, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Compra', new_compra_path %>
+<%= link_to 'Nova Compra', new_compra_path, :class => 'btn btn-outline-primary btn-sm' %>

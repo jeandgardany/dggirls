@@ -2,7 +2,7 @@
 
 <p>
   <strong>Data:</strong>
-  <%= @pag_parcela.data %>
+  <%= @pag_parcela.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -10,5 +10,5 @@
   <%= @pag_parcela.pago %>
 </p>
 
-<%= link_to 'Edit', edit_pag_parcela_path(@pag_parcela) %> |
-<%= link_to 'Back', pag_parcelas_path %>
+<%= link_to 'Editar', edit_pag_parcela_path(@pag_parcela) %> |
+<%= link_to 'Voltar', pag_parcelas_path %>

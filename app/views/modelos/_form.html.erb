@@ -26,6 +26,11 @@
     <%= form.text_field :genero %>
   </div>
 
+  <div class="field">
+    <%= form.label :fotos %>
+    <%= form.file_field :fotos, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

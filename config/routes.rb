@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :forma_pagamentos
+  devise_for :users
   resources :entrega_estampas
   resources :estampas
   resources :caixas

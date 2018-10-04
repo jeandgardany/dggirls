@@ -16,13 +16,13 @@
   <tbody>
     <% @costuras.each do |costura| %>
       <tr>
-        <td><%= costura.data %></td>
+        <td><%= costura.data.strftime("%d/%m/%Y") %></td>
         <td><%= costura.faccao %></td>
-        <td><%= costura.corte.data %></td>
+        <td><%= costura.corte.data.strftime("%d/%m/%Y") %></td>
         <td><%= costura.qtd_total %></td>
-        <td><%= link_to 'Mostrar', costura %></td>
-        <td><%= link_to 'Editar', edit_costura_path(costura) %></td>
-        <td><%= link_to 'Deletar', costura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', costura, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_costura_path(costura), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', costura, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Costura', new_costura_path %>
+<%= link_to 'Nova Costura', new_costura_path, :class => 'btn btn-outline-primary btn-sm' %>

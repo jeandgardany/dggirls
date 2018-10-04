@@ -14,11 +14,11 @@
   <tbody>
     <% @pag_parcelas.each do |pag_parcela| %>
       <tr>
-        <td><%= pag_parcela.data %></td>
+        <td><%= pag_parcela.data.strftime("%d/%m/%Y") %></td>
         <td><%= pag_parcela.pago %></td>
-        <td><%= link_to 'Show', pag_parcela %></td>
-        <td><%= link_to 'Edit', edit_pag_parcela_path(pag_parcela) %></td>
-        <td><%= link_to 'Destroy', pag_parcela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', pag_parcela %></td>
+        <td><%= link_to 'Editar', edit_pag_parcela_path(pag_parcela) %></td>
+        <td><%= link_to 'Deletar', pag_parcela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Pag Parcela', new_pag_parcela_path %>
+<%= link_to 'Novo Pag Parcela', new_pag_parcela_path %>

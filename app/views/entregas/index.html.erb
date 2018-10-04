@@ -20,17 +20,17 @@
   <tbody>
     <% @entregas.each do |entrega| %>
       <tr>
-        <td><%= entrega.data %></td>
+        <td><%= entrega.data.strftime("%d/%m/%Y") %></td>
         <td><%= entrega.costura.corte.qtd_total %></td>
         <td><%= entrega.qtd_entrega %></td>
         <td><%= entrega.restante = entrega.costura.corte.qtd_total - entrega.qtd_entrega %></td>
         <td><%= entrega.valor_pago %></td>
         <td><%= entrega.restante %></td>
-        <td><%= entrega.finalizado %></td>
+        <td><%= formatar_boolean(entrega.finalizado) %></td>
         <td><%= entrega.perdas %></td>
-        <td><%= link_to 'Show', entrega %></td>
-        <td><%= link_to 'Edit', edit_entrega_path(entrega) %></td>
-        <td><%= link_to 'Destroy', entrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', entrega, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_entrega_path(entrega), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', entrega, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Entrega', new_entrega_path %>
+<%= link_to 'Nova Entrega', new_entrega_path, :class => 'btn btn-outline-primary btn-sm' %>

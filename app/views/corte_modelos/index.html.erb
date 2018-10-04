@@ -18,9 +18,9 @@
         <td><%= corte_modelo.qtd %></td>
         <td><%= corte_modelo.modelo %></td>
         <td><%= corte_modelo.corte %></td>
-        <td><%= link_to 'Show', corte_modelo %></td>
-        <td><%= link_to 'Edit', edit_corte_modelo_path(corte_modelo) %></td>
-        <td><%= link_to 'Destroy', corte_modelo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', corte_modelo, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_corte_modelo_path(corte_modelo), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', corte_modelo, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Corte Modelo', new_corte_modelo_path %>
+<%= link_to 'Novo Corte Modelo', new_corte_modelo_path, :class => 'btn btn-outline-primary btn-sm' %>

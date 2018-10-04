@@ -69,6 +69,6 @@ class ModelosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def modelo_params
-      params.require(:modelo).permit(:codigo, :nome, :genero)
+      params.require(:modelo).permit(:codigo, :nome, :genero, fotos:[])
     end
 end

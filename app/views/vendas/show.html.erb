@@ -2,7 +2,7 @@
 
 <p>
   <strong>Data:</strong>
-  <%= @venda.data %>
+  <%= @venda.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -25,5 +25,5 @@
   <%= @venda.nota %>
 </p>
 
-<%= link_to 'Edit', edit_venda_path(@venda) %> |
-<%= link_to 'Back', vendas_path %>
+<%= link_to 'Editar', edit_venda_path(@venda) %> |
+<%= link_to 'Voltar', vendas_path %>

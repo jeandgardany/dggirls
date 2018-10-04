@@ -17,14 +17,14 @@
   <tbody>
     <% @vendas.each do |venda| %>
       <tr>
-        <td><%= venda.data %></td>
+        <td><%= venda.data.strftime("%d/%m/%Y") %></td>
         <td><%= venda.valor_venda %></td>
         <td><%= venda.dinheiro %></td>
         <td><%= venda.cartao %></td>
         <td><%= venda.nota %></td>
-        <td><%= link_to 'Show', venda %></td>
-        <td><%= link_to 'Edit', edit_venda_path(venda) %></td>
-        <td><%= link_to 'Destroy', venda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', venda %></td>
+        <td><%= link_to 'Editar', edit_venda_path(venda) %></td>
+        <td><%= link_to 'Deletar', venda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Venda', new_venda_path %>
+<%= link_to 'Nova Venda', new_venda_path %>

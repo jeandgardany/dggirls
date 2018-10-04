@@ -2,7 +2,7 @@
 
 <p>
   <strong>Data envio:</strong>
-  <%= @costura.data %>
+  <%= @costura.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>Data do Corte:</strong>
-  <%= @costura.corte.data %>
+  <%= @costura.corte.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -20,5 +20,5 @@
   <%= @costura.qtd_total %>
 </p>
 
-<%= link_to 'Editar', edit_costura_path(@costura) %> |
-<%= link_to 'Voltar', costuras_path %>
+<%= link_to 'Editar', edit_costura_path(@costura), :class => 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Voltar', costuras_path, :class => 'btn btn-outline-primary btn-sm' %>

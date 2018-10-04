@@ -18,15 +18,15 @@
   <tbody>
     <% @estampas.each do |estampa| %>
       <tr>
-        <td><%= estampa.data %></td>
-        <td><%= estampa.corte.data %></td>
+        <td><%= estampa.data.strftime("%d/%m/%Y") %></td>
+        <td><%= estampa.corte.data.strftime("%d/%m/%Y") %></td>
         <td><%= estampa.qtd_total %></td>
-        <td><%= estampa.valor_total %></td>
+        <td><%= valor_formatado(estampa.valor_total) %></td>
         <td><%= estampa.estampa_tipo %></td>
         <td><%= formatar_boolean(estampa.finalizado) %></td>
-        <td><%= link_to 'Mostrar', estampa %></td>
-        <td><%= link_to 'Editar', edit_estampa_path(estampa) %></td>
-        <td><%= link_to 'Deletar', estampa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', estampa, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_estampa_path(estampa), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', estampa, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'Nova Estampa', new_estampa_path %>
+<%= link_to 'Nova Estampa', new_estampa_path, :class => 'btn btn-outline-primary btn-sm' %>

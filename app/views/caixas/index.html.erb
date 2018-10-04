@@ -38,9 +38,9 @@
         <td><%= caixa.obs %></td>
         <td><%= caixa.total_perdas %></td>
         <td><%= caixa.estampa %></td>
-        <td><%= link_to 'Show', caixa %></td>
-        <td><%= link_to 'Edit', edit_caixa_path(caixa) %></td>
-        <td><%= link_to 'Destroy', caixa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', caixa, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_caixa_path(caixa), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', caixa, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Caixa', new_caixa_path %>
+<%= link_to 'Novo Caixa', new_caixa_path %>

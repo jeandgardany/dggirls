@@ -10,5 +10,23 @@
   <%= @modelo.nome %>
 </p>
 
-<%= link_to 'Edit', edit_modelo_path(@modelo) %> |
-<%= link_to 'Back', modelos_path %>
+<% if @modelo.fotos.attached? %>
+	<p>
+	  <strong>Fotos:</strong><br>
+	  	<% @modelo.fotos.each do |foto| %><br>
+	  		<% if foto.previewable? %>
+	  			<%= link_to image_tag(foto.preview(resize: "200x200")), foto %>
+	  			<%= link_to 'Deletar', foto, method: :delete, data: { confirm: 'Você tem certeza?' } %><br>
+	  		<% elsif foto.image? %>
+	  			<%= link_to image_tag(foto, width: 100), foto %>
+	  			<%= link_to 'Deletar', foto, method: :delete, data: { confirm: 'Você tem certeza?' } %><br>
+	  		<% else %>
+	  			<%= link_to foto.filename, foto %>
+	  			<%= link_to 'Deletar', foto, method: :delete, data: { confirm: 'Você tem certeza?' } %><br>
+	  		<% end %>
+	  	<% end %>
+	</p>
+<% end %>
+
+<%= link_to 'Editar', edit_modelo_path(@modelo), :class => 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Voltar', modelos_path, :class => 'btn btn-outline-primary btn-sm' %>

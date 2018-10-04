@@ -17,7 +17,7 @@
 
 <p>
   <strong>Valor Compra:</strong>
-  <%= @compra.valor %>
+  <%= valor_formatado(@compra.valor) %>
 </p>
 
 <p>
@@ -25,5 +25,5 @@
   <%= @compra.pagamento %>
 </p>
 
-<%= link_to 'Editar', edit_compra_path(@compra) %> |
-<%= link_to 'Voltar', compras_path %>
+<%= link_to 'Editar', edit_compra_path(@compra), :class => 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Voltar', compras_path, :class => 'btn btn-outline-primary btn-sm' %>

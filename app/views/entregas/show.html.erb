@@ -2,7 +2,7 @@
 
 <p>
   <strong>Data:</strong>
-  <%= @entrega.data %>
+  <%= @entrega.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Data Recebimento do Pacote:</strong>
-  <%= @entrega.costura.data %>
+  <%= @entrega.costura.data.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 <p>
   <strong>Finalizado:</strong>
-  <%= @entrega.finalizado %>
+  <%= formatar_boolean(@entrega.finalizado) %>
 </p>
 
 <p>
@@ -50,5 +50,5 @@
   <%= @entrega.obs %>
 </p>
 
-<%= link_to 'Edit', edit_entrega_path(@entrega) %> |
-<%= link_to 'Back', entregas_path %>
+<%= link_to 'Editar', edit_entrega_path(@entrega), :class => 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Voltar', entregas_path, :class => 'btn btn-outline-primary btn-sm' %>
