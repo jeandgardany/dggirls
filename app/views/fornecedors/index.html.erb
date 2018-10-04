@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fornecedors</h1>
+<h1>Fornecedores</h1>
 
 <table>
   <thead>
@@ -22,9 +22,9 @@
         <td><%= fornecedor.vendedor %></td>
         <td><%= fornecedor.fone %></td>
         <td><%= fornecedor.ativo %></td>
-        <td><%= link_to 'Show', fornecedor %></td>
-        <td><%= link_to 'Edit', edit_fornecedor_path(fornecedor) %></td>
-        <td><%= link_to 'Destroy', fornecedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', fornecedor, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_fornecedor_path(fornecedor), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', fornecedor, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Fornecedor', new_fornecedor_path %>
+<%= link_to 'Novo Fornecedor', new_fornecedor_path, :class => 'btn btn-outline-primary btn-sm' %>

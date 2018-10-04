@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Data</th>
-      <th>Compra</th>
+      <th>Data Entrega</th>
+      <th>Data Compra</th>
+      <th>Produtos</th>
       <th>Qtd total</th>
       <th>Valor</th>
       <th colspan="3"></th>
@@ -20,7 +21,7 @@
         <td><%= corte.compra.data.strftime("%d/%m/%Y") %></td>
         <td><%= corte.compra.produto %></td>
         <td><%= corte.qtd_total %></td>
-        <td><%= corte.valor %></td>
+        <td><%= valor_formatado(corte.valor) %></td>
         <td><%= link_to 'Mostrar', corte, :class => 'btn btn-outline-primary btn-sm' %></td>
         <td><%= link_to 'Editar', edit_corte_path(corte), :class => 'btn btn-outline-primary btn-sm' %></td>
         <td><%= link_to 'Deletar', corte, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>

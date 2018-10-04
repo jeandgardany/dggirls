@@ -16,9 +16,9 @@
       <tr>
         <td><%= debito.compra %></td>
         <td><%= debito.qtd_parcelas %></td>
-        <td><%= link_to 'Show', debito %></td>
-        <td><%= link_to 'Edit', edit_debito_path(debito) %></td>
-        <td><%= link_to 'Destroy', debito, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', debito, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_debito_path(debito), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', debito, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Debito', new_debito_path %>
+<%= link_to 'Novo Debito', new_debito_path, :class => 'btn btn-outline-primary btn-sm' %>

@@ -20,9 +20,9 @@
         <td><%= despesa.nome %></td>
         <td><%= despesa.valor %></td>
         <td><%= despesa.obs %></td>
-        <td><%= link_to 'Show', despesa %></td>
-        <td><%= link_to 'Edit', edit_despesa_path(despesa) %></td>
-        <td><%= link_to 'Destroy', despesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', despesa, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_despesa_path(despesa), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', despesa, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Despesa', new_despesa_path %>
+<%= link_to 'Nova Despesa', new_despesa_path, :class => 'btn btn-outline-primary btn-sm' %>

@@ -22,9 +22,9 @@
         <td><%= venda.dinheiro %></td>
         <td><%= venda.cartao %></td>
         <td><%= venda.nota %></td>
-        <td><%= link_to 'Mostrar', venda %></td>
-        <td><%= link_to 'Editar', edit_venda_path(venda) %></td>
-        <td><%= link_to 'Deletar', venda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', venda, :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_venda_path(venda), :class => 'btn btn-outline-primary btn-sm' %></td>
+        <td><%= link_to 'Deletar', venda, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'Nova Venda', new_venda_path %>
+<%= link_to 'Nova Venda', new_venda_path, :class => 'btn btn-outline-primary btn-sm' %>
